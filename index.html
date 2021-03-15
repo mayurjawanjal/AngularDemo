@@ -6,20 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
 </head>
 <body>
-    <div ng-app="my-app" ng-controller="my-ctrl" >
-        <h1>{{title}}</h1>
-        <p>Enter Country Name to be visited :</p>
-        <label for="county">Country : </label>
-        <input type ="text" ng-model="countryName" id="county"  placeholder="Country Name">
-        <span><input type="button" value="Add" ng-click="addCountry()"></span>
+    <div ng-app="my-app" ng-controller="my-ctrl">
+        <div>
+            <label for="Name">Full Name : </label>
+            <span><input type ="text" ng-model="employee.name" id="Name"  placeholder="first-name last-name" required></span><br><br>
+            <label for="dob">Date of birth : </label>
+            <span><input type="text" ng-model="employee.dofb" id="dob" placeholder="yyyy-mm-dd" required pattern="\d{4}-\d{2}-\d{2}"></span><br><br>
+            <label for="num">Number : </label>
+            <span><input type="text" ng-model="employee.number" id="num" required pattern="^[6-9]\d{9}$"></span><br><br>
+            <label for="mail">Mail Id : </label>
+            <span><input type="email" ng-model="employee.mailID" id="mail" required></span><br><br>
+            <label for="jd">Joing Date : </label>
+            <span><input type="text" ng-model="employee.joiningDate" id="jd" placeholder="yyyy-mm-dd" required pattern="\d{4}-\d{2}-\d{2}"></span><br><br>
+            <label for="dept">Department : </label>
+            <span><input type="text" ng-model="employee.department" id="dept" required></span><br><br>
+            <label for="title">Title : </label>
+            <span><input type="text" ng-model="employee.title" id="title" required></span><br><br>
+            <label for="salary">Salary : </label>
+            <span><input type="text" ng-model="employee.salary" id="salary" required></span><br><br>
+            <label for="addr">Address : </label>
+            <span><textarea rows="4" cols="50" ng-model="employee.address" id="addr" required>Address line , city </textarea></span><br><br>
+            <label for="pin-code">Pincode : </label>
+            <span><input type="text" ng-model="employee.pincode" id="pin-code" required pattern="\d{6}"></span><br><br>
+            <input type="button" ng-click="addEmployee()" value="Add Employee">
+        </div>
+        <div>
+            <label for="search">Enter Employee Name to be searched : </label>
+            <span><input type="text" ng-model="testEmp"></span>
+        </div>
+        <div>
+            <ul>
+                <li ng-repeat=" x in employeeList | filter:testEmp  " ng-click="deleteEmployee(x)"> 
+                   <p>Name : {{x.name}}<br>Phone : {{x.number}}   mail id : {{x.mailID}}<br>Address : {{x.address}},{{x.pincode}}</p>
+                </li>
+            </ul>
         
-        <ul>
-            <li ng-repeat="x in countryList">
-                {{x}}
-            </li>
-        </ul>   
+        </div>  
     </div>
 
 <script src="app.js"></script>
