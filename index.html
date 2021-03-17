@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,27 +15,41 @@
         <div>
             <label for="Name">Full Name : </label>
             <span><input type ="text" ng-model="employee.name" id="Name"  placeholder="first-name last-name" required></span><br><br>
-            <label for="dob">Date of birth : </label>
-            <span><input type="text" ng-model="employee.dofb" id="dob" placeholder="yyyy-mm-dd" required pattern="\d{4}-\d{2}-\d{2}"></span><br><br>
+
             <label for="num">Number : </label>
-            <span><input type="text" ng-model="employee.number" id="num" required pattern="^[6-9]\d{9}$"></span><br><br>
-            <label for="mail">Mail Id : </label>
-            <span><input type="email" ng-model="employee.mailID" id="mail" required></span><br><br>
-            <label for="jd">Joing Date : </label>
-            <span><input type="text" ng-model="employee.joiningDate" id="jd" placeholder="yyyy-mm-dd" required pattern="\d{4}-\d{2}-\d{2}"></span><br><br>
-            <label for="dept">Department : </label>
-            <span><input type="text" ng-model="employee.department" id="dept" required></span><br><br>
-            <label for="title">Title : </label>
-            <span><input type="text" ng-model="employee.title" id="title" required></span><br><br>
-            <label for="salary">Salary : </label>
-            <span><input type="text" ng-model="employee.salary" id="salary" required></span><br><br>
+            <span><input type="text" ng-model="employee.Mobile" id="num" required pattern="^[6-9]\d{9}$"></span><br><br>
+            
             <label for="addr">Address : </label>
-            <span><textarea rows="4" cols="50" ng-model="employee.address" id="addr" required>Address line , city </textarea></span><br><br>
+            <span><textarea rows="4" cols="50" ng-model="employee.Address" id="addr" required>Address line , city </textarea></span><br><br>
+
+           
+            <label for="salary">Salary : </label>
+            <span><input type="text" ng-model="employee.Salary" id="salary" required></span><br><br>
+
+            <label for="dept">Department : </label>
+            <span><input type="text" ng-model="employee.Department" id="dept" required></span><br><br>
+
+            <label for="title">Title : </label>
+            <span><input type="text" ng-model="employee.Title" id="title" required></span><br><br>
+
+            
+         <!--   <label for="mail">Mail Id : </label>
+            <span><input type="email" ng-model="employee.mailID" id="mail" required></span><br><br>
+         -->
+            <label for="jd">Joing Date : </label>
+            <span><input type="text" ng-model="employee.JoiningDate" id="jd" placeholder="yyyy-mm-dd" required pattern="\d{4}-\d{2}-\d{2}"></span><br><br>
+
+            <label for="dob">Date of birth : </label>
+            <span><input type="text" ng-model="employee.BirthDate" id="dob" placeholder="yyyy-mm-dd" required pattern="\d{4}-\d{2}-\d{2}"></span><br><br>
+            
             <label for="pin-code">Pincode : </label>
-            <span><input type="text" ng-model="employee.pincode" id="pin-code" required pattern="\d{6}"></span><br><br>
+            <span><input type="text" ng-model="employee.Pincode" id="pin-code" required pattern="\d{6}"></span><br><br>
+
+
             <input type="button" ng-click="addEmployee()" value="Add Employee">
         </div>
-        <div>
+        
+      <!--  <div>
             <label for="search">Enter Employee Name to be searched : </label>
             <span><input type="text" ng-model="testEmp"></span>
         </div>
@@ -45,7 +60,8 @@
                 </li>
             </ul>
         
-        </div>  
+        </div>
+    -->
     </div>
 
 <script src="app.js"></script>
